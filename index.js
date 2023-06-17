@@ -1,9 +1,19 @@
-let userText = prompt('Введите текст');
-userText = userText.trim();
-let wordFromText = prompt('Введите слово из текста');
-wordFromText = wordFromText.trim();
+const users = [
+    {
+        username: 'David',
+        status: 'online',
+        lastActivity: 10
+    }, {
+        username: 'Lucy', 
+        status: 'offline',
+        lastActivity: 22
+    }, {
+        username: 'Bob', 
+        status: 'online',
+        lastActivity: 104
+    }
+]
 
-const indexOfWord = userText.indexOf(wordFromText);
-console.log(indexOfWord);
-const resultString = userText.slice(0, indexOfWord);
-alert(`Результат: ${resultString}`)
+const usersOnline = users.filter((person) => person.status === 'online');
+const usersOnlineNames = usersOnline.map((person) => person.username).join(', ');
+alert(`Сейчас в онлайн следующие пользователи: ${usersOnlineNames}`);
